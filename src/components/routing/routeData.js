@@ -7,6 +7,7 @@ import { ExpenseEdit } from './../pages/ExpenseEdit';
 import { ExpenseDelete } from './../pages/ExpenseDelete';
 import { NotFound } from './../pages/NotFound';
 
+// 各URLとコンポーネントを設定する
 export const routeData = [
     {
         path: '/',
@@ -15,22 +16,6 @@ export const routeData = [
             {
                 index: true,
                 element: <Home />,
-            },
-            {
-                path: 'budget', 
-                element: <Budget />,
-            },
-            {
-                path: 'add',
-                element : <ExpenseAdd />,
-            },
-            {
-                path: 'edit/:id',
-                element : <ExpenseEdit />,
-            },
-            {
-                path: 'delete/:id',
-                element : <ExpenseDelete />,
             },
             {
                 path: 'about',

@@ -8,24 +8,12 @@ import { Container } from '@mui/material';
 import { TextField } from '@mui/material';
 
 export const BudgetForm = () => {
-  const navigate = useNavigate();
-  const dispatch = useContext(DispatchContext);
-  const { budgetAmount } = useContext(StateContext);
-  const [ amount, setAmount ] = useState(budgetAmount);
+  // 予算額を設定するためのフォーム処理
+  // StateContextのbudgetAmountを再設定する
+  // distpatchを呼び出してbudgetAmountを更新する
   
-  const handleOnChangeAmount = (e) => {
-    setAmount(v => parseInt(e.target.value));
-  };
   
-  const handleOnClick = (e) => {
-    dispatch({
-      type: 'setBudgetAmount',
-      payload : {
-        amount : amount,
-      }
-    });
-    navigate('/');
-  };
+  
   
   return (
     <Container sx={{my:4}}>
@@ -39,15 +27,12 @@ export const BudgetForm = () => {
               id="budget"
               label="予算額"
               type="number"
-              value={amount}
-              onChange={handleOnChangeAmount}
             />
           </Box>
           <Box>
             <Button
               variant="contained"
               color="primary"
-              onClick={handleOnClick}
             >
               設定
             </Button>

@@ -4,9 +4,15 @@ import { Box, Stack, Typography, Paper } from '@mui/material'
 import { Container } from '@mui/material';
 
 export const Summary = () => {
-  const { budgetAmount, expenses } = useContext(StateContext);
-  const totalExpense = expenses.reduce((val,ele) => val + parseInt(ele.price), 0);
-  const balance = budgetAmount - totalExpense;
+  // 予算と支出のまとめを表示する
+  // 予算額、支出合計、残額を表示する
+  // StateContextからbudgetAmountとexpensesを取得する
+  // 予算額はbudgetAmountを表示する
+  // 支出合計はexpenses配列のpriceを合計する
+  // 残額は予算額-支出合計
+  
+  
+  
   
   return (
     <Container sx={{my:4}}>
@@ -34,7 +40,7 @@ export const Summary = () => {
             予算額
           </Typography>
           <Typography>
-            &yen;{budgetAmount.toLocaleString()}
+            &yen;{}
           </Typography>
         </Stack>
         <Stack 
@@ -50,7 +56,7 @@ export const Summary = () => {
             支出合計
           </Typography>
           <Typography>
-            &yen;{totalExpense.toLocaleString()}
+            &yen;{}
           </Typography>
         </Stack>
         <Stack 
@@ -66,7 +72,7 @@ export const Summary = () => {
             残額
           </Typography>
           <Typography>
-            {balance.toLocaleString()}
+            {}
           </Typography>
         </Stack>
       </Paper>  

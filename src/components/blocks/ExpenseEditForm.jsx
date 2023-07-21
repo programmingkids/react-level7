@@ -9,38 +9,12 @@ import { Container } from '@mui/material';
 import { TextField } from '@mui/material';
 
 export const ExpenseEditForm = () => {
-  const navigate = useNavigate();
-  const dispatch = useContext(DispatchContext);
-  const { expenses } = useContext(StateContext);
-  const { id } = useParams();
-  const [ expense, setExpense ] = useState({
-    id : '',
-    name: '',
-    price: '',
-  });
+  // 支出を更新するためのフォーム処理
+  // 支出のnameとpriceを表示するフォーム処理
+  // URLパラメータからidを取得する
+  // distpatchを呼び出してexpensesの配列の要素を更新する
   
-  useEffect(() => {
-    if(expenses.length > 0) {
-      const data = expenses.find(e => e.id === parseInt(id));
-      setExpense(data);
-    }
-  },[expenses, id]);
   
-  const handleOnChange = (e) => {
-    const ex = {...expense};
-    ex[e.target.id] = e.target.value;
-    setExpense(p => ex);
-  };
-  
-  const handleOnClick = (e) => {
-    dispatch({
-      type: 'editExpense',
-      payload : {
-        expense : expense,
-      }
-    });
-    navigate('/');
-  };
   
   return (
     <Container sx={{my:4}}>
@@ -54,8 +28,6 @@ export const ExpenseEditForm = () => {
               id="name"
               label="支出名"
               type="text"
-              value={expense.name}
-              onChange={handleOnChange}
             />
           </Box>
           <Box>
@@ -63,15 +35,12 @@ export const ExpenseEditForm = () => {
               id="price"
               label="金額"
               type="number"
-              value={expense.price}
-              onChange={handleOnChange}
             />
           </Box>
           <Box>
             <Button
               variant="contained"
               color="primary"
-              onClick={handleOnClick}
             >
               登録
             </Button>

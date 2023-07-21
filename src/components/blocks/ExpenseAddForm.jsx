@@ -8,28 +8,12 @@ import { Container } from '@mui/material';
 import { TextField } from '@mui/material';
 
 export const ExpenseAddForm = () => {
-  const navigate = useNavigate();
-  const dispatch = useContext(DispatchContext);
-  const [ expense, setExpense ] = useState({
-    name : '',
-    price : '',
-  });
+  // 支出を新規追加するためのフォーム処理
+  // 支出のnameとpriceを表示するフォーム処理
+  // distpatchを呼び出してexpensesの配列に要素を追加する
   
-  const handleOnChange = (e) => {
-    const ex = {...expense};
-    ex[e.target.id] = e.target.value;
-    setExpense(p => ex);
-  };
   
-  const handleOnClick = (e) => {
-    dispatch({
-      type: 'addExpense',
-      payload : {
-        expense : expense,
-      }
-    });
-    navigate('/');
-  };
+  
   
   return (
     <Container sx={{my:4}}>
@@ -43,8 +27,6 @@ export const ExpenseAddForm = () => {
               id="name"
               label="支出名"
               type="text"
-              value={expense.name}
-              onChange={handleOnChange}
             />
           </Box>
           <Box>
@@ -52,15 +34,12 @@ export const ExpenseAddForm = () => {
               id="price"
               label="金額"
               type="number"
-              value={expense.price}
-              onChange={handleOnChange}
             />
           </Box>
           <Box>
             <Button
               variant="contained"
               color="primary"
-              onClick={handleOnClick}
             >
               登録
             </Button>

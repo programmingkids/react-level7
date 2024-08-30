@@ -1,8 +1,6 @@
-import { ExpenseDeleteData } from './../blocks/ExpenseDeleteData';
+import { ExpenseDeleteData } from "./../blocks/ExpenseDeleteData";
 
 // ExpenseDeleteDataを表示する
 export const ExpenseDelete = () => {
-  return (
-    <></>
-  );
+  return <></>;
 };

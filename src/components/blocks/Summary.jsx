@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { StateContext } from './../providers/StateContext';
-import { Box, Stack, Typography, Paper } from '@mui/material'
-import { Container } from '@mui/material';
+import { useContext } from "react";
+import { StateContext } from "./../providers/StateContext";
+import { Box, Stack, Typography, Paper } from "@mui/material";
+import { Container } from "@mui/material";
 
 export const Summary = () => {
   // 予算と支出のまとめを表示する
@@ -10,72 +10,57 @@ export const Summary = () => {
   // 予算額はbudgetAmountを表示する
   // 支出合計はexpenses配列のpriceを合計する
   // 残額は予算額-支出合計
-  
-  
-  
-  
+
   return (
-    <Container sx={{my:4}}>
+    <Container sx={{ my: 4 }}>
       <Paper elevation={2}>
-        <Typography 
+        <Typography
           variant="subtitle3"
           component="h4"
           bgcolor="primary.light"
-          sx={{borderRadius:'4px 4px 0 0'}}
+          sx={{ borderRadius: "4px 4px 0 0" }}
           px={2}
           py={1}
         >
           支出まとめ
         </Typography>
-        <Stack 
-          direction="row" 
-          spacing={2} 
+        <Stack
+          direction="row"
+          spacing={2}
           my={1}
           px={2}
           py={1}
-          justifyContent="space-between" 
-          sx={{borderBottom: '1px solid #cecece'}}
+          justifyContent="space-between"
+          sx={{ borderBottom: "1px solid #cecece" }}
         >
-          <Typography variant="subtitle2">
-            予算額
-          </Typography>
-          <Typography>
-            &yen;{}
-          </Typography>
+          <Typography variant="subtitle2">予算額</Typography>
+          <Typography>&yen;{}</Typography>
         </Stack>
-        <Stack 
-          direction="row" 
-          spacing={2} 
-          my={1} 
+        <Stack
+          direction="row"
+          spacing={2}
+          my={1}
           px={2}
           py={1}
-          justifyContent="space-between" 
-          sx={{borderBottom: '1px solid #cecece'}}
+          justifyContent="space-between"
+          sx={{ borderBottom: "1px solid #cecece" }}
         >
-          <Typography variant="subtitle2">
-            支出合計
-          </Typography>
-          <Typography>
-            &yen;{}
-          </Typography>
+          <Typography variant="subtitle2">支出合計</Typography>
+          <Typography>&yen;{}</Typography>
         </Stack>
-        <Stack 
-          direction="row" 
-          spacing={2} 
-          my={1} 
+        <Stack
+          direction="row"
+          spacing={2}
+          my={1}
           px={2}
           py={1}
-          justifyContent="space-between" 
-          sx={{borderBottom: '1px solid #cecece'}}
+          justifyContent="space-between"
+          sx={{ borderBottom: "1px solid #cecece" }}
         >
-          <Typography variant="subtitle2">
-            残額
-          </Typography>
-          <Typography>
-            {}
-          </Typography>
+          <Typography variant="subtitle2">残額</Typography>
+          <Typography>{}</Typography>
         </Stack>
-      </Paper>  
+      </Paper>
     </Container>
   );
 };

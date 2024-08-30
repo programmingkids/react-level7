@@ -1,7 +1,5 @@
-import { ExpenseAddForm } from './../blocks/ExpenseAddForm';
+import { ExpenseAddForm } from "./../blocks/ExpenseAddForm";
 
 export const ExpenseAdd = () => {
-  return (
-    <ExpenseAddForm />
-  );
+  return <ExpenseAddForm />;
 };

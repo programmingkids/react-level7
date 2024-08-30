@@ -1,7 +1,5 @@
-import { BudgetForm } from './../blocks/BudgetForm';
+import { BudgetForm } from "./../blocks/BudgetForm";
 
 export const Budget = () => {
-  return (
-    <BudgetForm />
-  );
+  return <BudgetForm />;
 };

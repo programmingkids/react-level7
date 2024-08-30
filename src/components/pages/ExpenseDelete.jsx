@@ -1,7 +1,5 @@
-import { ExpenseDeleteData } from './../blocks/ExpenseDeleteData';
+import { ExpenseDeleteData } from "./../blocks/ExpenseDeleteData";
 
 export const ExpenseDelete = () => {
-  return (
-    <ExpenseDeleteData />
-  );
+  return <ExpenseDeleteData />;
 };
